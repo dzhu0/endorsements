@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>We are the Champions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Icon -->
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <img class="logo" src="images/logo.png" alt="Site's logo">
+
+            <h1 class="title">We are the Champions</h1>
+
+            <form id="endorse-form">
+                <textarea
+                    class="endorse"
+                    id="endorse"
+                    rows="5"
+                    placeholder="Write your endorsement here"
+                    required
+                    autofocus></textarea>
+
+                <div class="from-to">
+                    <input type="text" id="from" placeholder="From" required>
+                    <input type="text" id="to" placeholder="To" required>
+                </div>
+
+                <button class="publish" id="publish">Publish</button>
+            </form>
+
+            <h2 class="sub-title">- Endorsements -</h2>
+
+            <ul class="endorsements" id="endorsements">No endorsements here... yet</ul>
+        </main>
+    </div>
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>

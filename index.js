@@ -15,6 +15,8 @@ const fromEl = document.getElementById("from")
 const toEl = document.getElementById("to")
 const endorsementsEl = document.getElementById("endorsements")
 
+const liked = JSON.parse(localStorage.getItem("liked")) || []
+
 endorseFormEl.addEventListener("submit", addEndorsement)
 
 onValue(endorsements, snapshot => {
@@ -72,8 +74,16 @@ function prependEndorsementToEndorsementsEl(endorsement) {
 </div>`
 
     newEl.addEventListener("click", () => {
-        update(ref(database, `endorsements/${id}`), { likes: likes + 1 })
+        if (!liked.includes(id)) {
+            update(ref(database, `endorsements/${id}`), { likes: likes + 1 })
+            addLiked(id)
+        }
     })
 
     endorsementsEl.prepend(newEl)
+}
+
+function addLiked(id) {
+    liked.push(id)
+    localStorage.setItem("liked", JSON.stringify(liked))
 }

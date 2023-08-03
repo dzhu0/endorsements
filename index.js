@@ -15,7 +15,7 @@ const fromEl = document.getElementById("from")
 const toEl = document.getElementById("to")
 const endorsementsEl = document.getElementById("endorsements")
 
-const liked = JSON.parse(localStorage.getItem("liked")) || []
+const liked = JSON.parse(localStorage.getItem("endorsements-liked")) || []
 
 endorseFormEl.addEventListener("submit", addEndorsement)
 
@@ -85,5 +85,5 @@ function prependEndorsementToEndorsementsEl(endorsement) {
 
 function addLiked(id) {
     liked.push(id)
-    localStorage.setItem("liked", JSON.stringify(liked))
+    localStorage.setItem("endorsements-liked", JSON.stringify(liked))
 }
